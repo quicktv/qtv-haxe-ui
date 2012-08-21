@@ -16,7 +16,7 @@ class PlayVideoOperation extends Action
 	}
 	public function new() 
 	{
-		
+		super();
 	}
 	
 }

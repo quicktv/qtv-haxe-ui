@@ -17,7 +17,7 @@ class BasicImage extends Image
 	
 	public function new() 
 	{
-		
+		super();
 	}
 	
 }

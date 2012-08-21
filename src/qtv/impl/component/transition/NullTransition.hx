@@ -11,7 +11,7 @@ class NullTransition extends Transition
 
 	public function new() 
 	{
-		
+		super();
 	}
 	
 }

@@ -11,7 +11,7 @@ class BasicVideo extends KalturaVideo
 
 	public function new() 
 	{
-		
+		super();
 	}
 	
 }
