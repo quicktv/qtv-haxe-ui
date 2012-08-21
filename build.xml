@@ -1,0 +1,19 @@
+<project name="qtv-haxe-ui" default="build">
+	<!-- Project specific overrides -->
+
+	<!-- Common properties and targets -->
+	<import file="build-imports.xml" />
+
+	<target name="stage">
+		<if>
+			<equals arg1="${build.env}" arg2="development" />
+			<then>
+				<delete dir="${qtv-java-webapp.assets.dir}/tmp/qtv.dependencies/qtv-haxe-ui/src"/>
+				<copy todir="${qtv-java-webapp.assets.dir}/tmp/qtv.dependencies/qtv-haxe-ui/src">
+					<fileset dir="${qtv-haxe-ui.assets.dir}/src"/>
+				</copy>
+ 			</then>
+		</if>
+	</target>
+
+</project>

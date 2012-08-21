@@ -1,0 +1,3 @@
+<project name="qtv-haxe-ui.assets">
+    <dirname property="qtv-haxe-ui.assets.dir" file="${ant.file.qtv-haxe-ui.assets}"/>
+</project>
