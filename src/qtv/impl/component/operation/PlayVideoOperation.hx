@@ -1,22 +1,21 @@
 package qtv.impl.component.operation;
-import xuloo.ui.Action;
+
+import xuloo.ui.TargetAwareAction;
 
 /**
  * ...
  * @author Trevor B
  */
 
-class PlayVideoOperation extends Action
+class PlayVideoOperation extends TargetAwareAction
 {
-	public var target(never, setTarget):String;
-	
-	var _target:String;
-	public function setTarget(value:String):String {
-		return _target = value;
-	}
 	public function new() 
 	{
 		super();
+	}
+	
+	public override function execute():Void {
+		Console.log("playing video " + getTargetComponent());
 	}
 	
 }
