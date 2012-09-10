@@ -1,12 +1,11 @@
 package qtv.impl.component.display.video;
-import xuloo.ui.KalturaVideo;
 
 /**
  * ...
  * @author Trevor B
  */
 
-class BasicVideo extends KalturaVideo
+class BasicVideo extends xuloo.ui.BasicVideo
 {
 
 	public function new() 
