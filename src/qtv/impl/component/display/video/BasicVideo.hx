@@ -8,8 +8,7 @@ package qtv.impl.component.display.video;
 class BasicVideo extends xuloo.ui.BasicVideo
 {
 
-	public function new() 
-	{
+	public function new() {
 		super();
 	}
 	

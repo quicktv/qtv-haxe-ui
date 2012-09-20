@@ -1,5 +1,7 @@
 package qtv.ui;
 import minject.Injector;
+import qtv.impl.component.display.video.BasicVideo;
+import xuloo.ui.BasicShape;
 import xuloo.ui.UIComponent;
 
 /**
@@ -18,9 +20,10 @@ class ComponentBuilder
 	public function create<T>(clazz:Class<T>, ?vars:Array<Dynamic>):T {
 		if (vars == null) vars = [];
 		Console.log("creating instance of clazz " + clazz);
-		var instance:T = Type.createInstance(clazz, vars);
+
+		var instance:T = Type.createInstance(clazz, []);
 		injector.injectInto(instance);
-		
+
 		return instance;
 	}
 	
