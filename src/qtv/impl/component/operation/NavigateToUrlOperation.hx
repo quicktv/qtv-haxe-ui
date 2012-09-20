@@ -2,7 +2,10 @@ package qtv.impl.component.operation;
 
 import xuloo.ui.Action;
 
-#if js
+#if flash
+import flash.net.URLRequest;
+import flash.Lib;
+#elseif js
 import js.Lib;
 #end
 
@@ -20,7 +23,9 @@ class NavigateToUrlOperation extends Action {
 	}
 	
 	public override function execute():Void {
-		#if js
+		#if flash
+		Lib.getURL(new URLRequest(_url));
+		#elseif js
 		Lib.window.location.replace(_url);
 		#end
 	}
