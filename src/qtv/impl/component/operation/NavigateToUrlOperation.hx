@@ -29,4 +29,8 @@ class NavigateToUrlOperation extends Action {
 		Lib.window.location.replace(_url);
 		#end
 	}
+
+	public override function toString():String {
+		return "[NavigateToUrl('" + event + "', '" + _url + "')]";
+	}
 }
