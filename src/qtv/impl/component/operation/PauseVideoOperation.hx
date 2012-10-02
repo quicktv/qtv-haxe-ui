@@ -8,16 +8,16 @@ import xuloo.ui.TargetAwareAction;
  * @author Trevor B
  */
 
-class PlayVideoOperation extends TargetAwareAction
+class PauseVideoOperation extends TargetAwareAction
 {
 	public function new() {
 		super();
 	}
 	
 	public override function execute():Void {
-		Console.log("playing video " + getTargetComponent());
+		Console.log("pausing video " + getTargetComponent());
 		
-		cast(getTargetComponent(), BasicVideo).play();
+		cast(getTargetComponent(), BasicVideo).pause();
 	}
 	
 }

@@ -8,16 +8,18 @@ import xuloo.ui.TargetAwareAction;
  * @author Trevor B
  */
 
-class PlayVideoOperation extends TargetAwareAction
+class SeekVideoOperation extends TargetAwareAction
 {
+	public var time(default, default):Float;
+
 	public function new() {
 		super();
 	}
 	
 	public override function execute():Void {
-		Console.log("playing video " + getTargetComponent());
+		Console.log("seeking video " + getTargetComponent() + " to " + time);
 		
-		cast(getTargetComponent(), BasicVideo).play();
+		cast(getTargetComponent(), BasicVideo).seek(Std.int(time));
 	}
 	
 }
