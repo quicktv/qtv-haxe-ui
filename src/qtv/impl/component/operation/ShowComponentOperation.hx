@@ -20,4 +20,8 @@ class ShowComponentOperation extends TargetAwareAction
 		getTargetComponent().visible = true;
 	}
 	
+	public override function toString():String {
+		return "[ShowComponentOperation('" + event + "', '" + target + "')]";
+	}
+	
 }

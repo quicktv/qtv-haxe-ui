@@ -20,4 +20,8 @@ class PlayVideoOperation extends TargetAwareAction
 		cast(getTargetComponent(), BasicVideo).play();
 	}
 	
+	public override function toString():String {
+		return "[PlayVideoOperation('" + event + "', '" + target + "')]";
+	}
+	
 }

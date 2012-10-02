@@ -22,4 +22,8 @@ class SeekVideoOperation extends TargetAwareAction
 		cast(getTargetComponent(), BasicVideo).seek(Std.int(time));
 	}
 	
+	public override function toString():String {
+		return "[SeekVideoOperation('" + event + "', '" + target + "', '" + time + "')]";
+	}
+	
 }

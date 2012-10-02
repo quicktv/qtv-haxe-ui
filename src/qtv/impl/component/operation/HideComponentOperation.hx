@@ -20,4 +20,8 @@ class HideComponentOperation extends TargetAwareAction
 		getTargetComponent().visible = false;
 	}
 	
+	public override function toString():String {
+		return "[HideComponentOperation('" + event + "', '" + target + "')]";
+	}
+	
 }

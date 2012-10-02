@@ -20,4 +20,8 @@ class PauseVideoOperation extends TargetAwareAction
 		cast(getTargetComponent(), BasicVideo).pause();
 	}
 	
+	public override function toString():String {
+		return "[PauseVideoOperation('" + event + "', '" + target + "')]";
+	}
+	
 }
