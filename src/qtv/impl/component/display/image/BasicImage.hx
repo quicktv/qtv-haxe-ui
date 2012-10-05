@@ -1,7 +1,5 @@
 package qtv.impl.component.display.image;
 
-import xuloo.ui.UIComponent;
-
 /**
  * ...
  * @author Trevor B
