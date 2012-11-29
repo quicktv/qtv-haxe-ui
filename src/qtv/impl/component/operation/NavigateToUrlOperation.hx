@@ -18,11 +18,28 @@ class NavigateToUrlOperation extends Action {
 		return _url = value;
 	}
 
+	public var pauseOnExecution(never, setPauseOnExecution):Bool;
+
+	var _pauseOnExecution:Bool = true;
+	public function setPauseOnExecution(value:Bool):Bool {
+		return _pauseOnExecution = value;
+	}
+
 	public function new() {
 		super();
 	}
 	
 	public override function execute():Void {
+
+		if (_pauseOnExecution) 
+		{
+			interactiveLayer.pauseVideo();
+		}
+		else
+		{
+			interactiveLayer.playVideo();
+		}
+
 		#if flash
 		Lib.getURL(new URLRequest(_url));
 		#elseif js
