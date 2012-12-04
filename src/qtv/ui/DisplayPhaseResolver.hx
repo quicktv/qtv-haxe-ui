@@ -1,5 +1,6 @@
 package qtv.ui;
 
+import qtv.ui.ComponentEvent;
 import qtv.ui.Transition;
 
 import xuloo.ui.UIComponent;
@@ -29,15 +30,15 @@ class DisplayPhaseResolver extends UIComponentPlugin
 		{
 			case DisplayPhase.NOT_SHOWING:
 				target.alpha = 0;
-				//active = false;
+				//target.active = false;
 			
 			case DisplayPhase.TRANSITION_IN:
 			case DisplayPhase.TRANSITION_OUT:
-				//active = true;
+				//target.active = true;
 			
 			case DisplayPhase.SHOWING:
 				target.alpha = 1;
-				//active = true;
+				//target.active = true;
 			
 			default:
 				//active = false;
@@ -52,7 +53,7 @@ class DisplayPhaseResolver extends UIComponentPlugin
 		// if this is the root object then show it.
 		if (target.instanceName == "______root______") return DisplayPhase.SHOWING;
 		
-		var transition:FadeTransition = cast(target.getPlugin(Std.string(TransitionDirection.IN)));
+		var transition:Transition = cast(target.getPlugin(Std.string(TransitionDirection.IN)));
 		
 		if (transition != null && (context.playhead > context.begin - transition.duration && context.playhead < context.begin)) {
 			return DisplayPhase.TRANSITION_IN;
@@ -64,7 +65,7 @@ class DisplayPhaseResolver extends UIComponentPlugin
 					logger.debug("showing component");
 				}*/
 				
-				//dispatchEvent(new ComponentEvent(ComponentEvent.COMPONENT_SHOWN));
+				target.dispatchEvent(new ComponentEvent(ComponentEvent.COMPONENT_SHOWN));
 			}
 			
 			return DisplayPhase.SHOWING;
@@ -81,7 +82,7 @@ class DisplayPhaseResolver extends UIComponentPlugin
 				logger.debug("hiding component");
 			}*/
 			
-			//dispatchEvent(new ComponentEvent(ComponentEvent.COMPONENT_HIDDEN));
+			target.dispatchEvent(new ComponentEvent(ComponentEvent.COMPONENT_HIDDEN));
 		}
 		
 		return DisplayPhase.NOT_SHOWING;

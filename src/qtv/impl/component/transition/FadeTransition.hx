@@ -1,7 +1,10 @@
-package qtv.ui;
+package qtv.impl.component.transition;
 
+import qtv.ui.DisplayPhase;
 import qtv.ui.TemporalContext;
 import qtv.ui.Transition;
+import qtv.ui.TransitionDirection;
+
 import xuloo.ui.UIComponent;
 
 /**
@@ -17,13 +20,14 @@ class FadeTransition extends Transition {
 	
 	public override function resolve(target:UIComponent):Void {
 		
+		//Console.log("display phase " + context.phase);
+
 		if (context.phase == DisplayPhase.SHOWING) {
 			target.alpha = 1;
 			return;
 		}
 		
 		if (direction == TransitionDirection.IN && context.phase == DisplayPhase.TRANSITION_IN) {
-			Console.log("target = " + target);
 			target.alpha = 1 - ((context.begin - context.playhead) / duration);
 			return;
 		}

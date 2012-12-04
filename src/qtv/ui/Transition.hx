@@ -1,4 +1,7 @@
 package qtv.ui;
+
+import qtv.ui.TransitionDirection;
+
 import xuloo.ui.UIComponent;
 import xuloo.ui.UIComponentPlugin;
 
@@ -11,7 +14,16 @@ class Transition extends UIComponentPlugin
 {
 	public var context(default, default):TemporalContext;
 	
-	public var direction(default, default):TransitionDirection;
+	public var direction(getDirection, setDirection):TransitionDirection;
+
+	var _direction:TransitionDirection;
+	public function getDirection():TransitionDirection {
+		return _direction;
+	}
+	public function setDirection(value:TransitionDirection):TransitionDirection {
+		name = Std.string(value);
+		return _direction = value;
+	}
 	
 	public var duration(default, default):Int;
 	
@@ -22,9 +34,4 @@ class Transition extends UIComponentPlugin
 		this.direction = direction;
 		this.duration = duration;
 	}
-}
-
-enum TransitionDirection {
-	IN;
-	OUT;
 }

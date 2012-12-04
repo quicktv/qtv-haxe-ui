@@ -1,6 +1,8 @@
 package qtv.ui;
 
-import xuloo.ui.Timer;
+import qtv.api.core.IVideoTimer;
+
+import xuloo.ui.UIComponent;
 
 /**
  * ...
@@ -9,15 +11,17 @@ import xuloo.ui.Timer;
 
 class TemporalContext 
 {
-	@inject public var timer:Timer;
+	@inject public var timer:IVideoTimer;
 	
 	public var begin(default, default):Int;
 	public var end(default, default):Int;
 	public var duration(default, default):Int;
 	public var phase(default, default):DisplayPhase;
-	public var playhead(default, default):Float;
+	public var playhead(default, default):Int;
+	public var target(default, default):UIComponent;
 	
-	public function new(?begin:Int = 0, ?end:Int = 0, ?duration:Int = 0) {
+	public function new(?target:UIComponent, ?begin:Int = 0, ?end:Int = 0, ?duration:Int = 0) {
+		this.target = target;
 		this.begin = begin;
 		this.end = end;
 		this.duration = duration;
@@ -26,11 +30,12 @@ class TemporalContext
 	}
 	
 	@post public function post():Void {
-		timer.tick.add(onTick);
+		timer.timeChanged.add(onTick);
 	}
 	
-	function onTick(value:Float):Void {
+	function onTick(value:Int):Void {
 		//Console.log("time = " + value);
 		playhead = value;
+		target.render();
 	}
 }
