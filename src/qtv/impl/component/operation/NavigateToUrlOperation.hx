@@ -33,11 +33,11 @@ class NavigateToUrlOperation extends Action {
 
 		if (_pauseOnExecution) 
 		{
-			interactiveLayer.pauseVideo();
+			cast(interactiveLayer.getRootComponent(), xuloo.ui.BasicVideo).pause();
 		}
 		else
 		{
-			interactiveLayer.playVideo();
+			cast(interactiveLayer.getRootComponent(), xuloo.ui.BasicVideo).play();
 		}
 
 		#if flash

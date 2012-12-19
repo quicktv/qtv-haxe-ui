@@ -2,7 +2,7 @@ package qtv.impl.component.operation;
 
 import qtv.utils.Window;
 
-import xuloo.ui.
+import xuloo.ui.Action;
 
 class OpenPopupOperation extends Action {
 	public var url(getUrl, setUrl) : String;
