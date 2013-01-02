@@ -51,8 +51,7 @@ class DisplayPhaseResolver extends UIComponentPlugin
 		//if (_live) return DisplayPhase.DISPLAYING;
 
 		// if this is the root object then show it.
-		if (target.instanceName == "______root______") return DisplayPhase.SHOWING;
-		Console.log("target is included in layout? " + target.includeInLayout); 
+		if (target.instanceName == "______root______") return DisplayPhase.SHOWING; 
 		if (!target.includeInLayout) return DisplayPhase.NOT_SHOWING;
 		
 		var transition:Transition = cast(target.getPlugin(Std.string(TransitionDirection.IN)));
