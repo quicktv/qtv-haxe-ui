@@ -17,7 +17,7 @@ class HideComponentOperation extends TargetAwareAction
 	public override function execute():Void {
 		Console.log("hiding component " + getTargetComponent());
 		
-		getTargetComponent().visible = false;
+		getTargetComponent().includeInLayout = false;
 	}
 	
 	public override function toString():String {

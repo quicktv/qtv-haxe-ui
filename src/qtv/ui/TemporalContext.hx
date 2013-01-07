@@ -35,7 +35,9 @@ class TemporalContext
 	
 	function onTick(value:Int):Void {
 		//Console.log("time = " + value);
-		playhead = value;
-		target.render();
+		if (playhead != value) {
+			playhead = value;
+			target.render();
+		}
 	}
 }
