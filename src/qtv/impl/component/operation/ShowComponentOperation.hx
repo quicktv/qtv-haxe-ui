@@ -15,8 +15,6 @@ class ShowComponentOperation extends TargetAwareAction
 	}
 	
 	public override function execute():Void {
-		Console.log("showing component " + getTargetComponent());
-		
 		getTargetComponent().includeInLayout = true;
 	}
 	

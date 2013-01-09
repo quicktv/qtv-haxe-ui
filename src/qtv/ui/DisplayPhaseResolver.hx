@@ -24,8 +24,6 @@ class DisplayPhaseResolver extends UIComponentPlugin
 	public override function resolve(target:UIComponent):Void {
 		context.phase = currentDisplayPhase(target);
 		
-		//Console.log("display phase = " + target + " " + context.phase + " '" + target.visible + "'");
-		
 		switch (context.phase)
 		{
 			case DisplayPhase.NOT_SHOWING:
