@@ -42,7 +42,7 @@ class OpenPopupOperation extends Action {
 	}
 
 	override public function execute() : Void {
-		Console.log("opening popup window " + _url + " " + title + " " + _specs);
+		//Console.log("opening popup window " + _url + " '" + title + "' '" + _specs + "'");
 		interactiveLayer.openPopup(_url, _title, _specs);
 	}
 
