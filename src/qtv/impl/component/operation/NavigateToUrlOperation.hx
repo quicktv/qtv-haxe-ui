@@ -41,7 +41,7 @@ class NavigateToUrlOperation extends Action {
 		}
 
 		#if flash
-		Lib.getURL(new URLRequest(_url));
+		Lib.getURL(new URLRequest(_url), "_blank");
 		#elseif js
 		Lib.window.location.replace(_url);
 		#end
