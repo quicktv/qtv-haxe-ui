@@ -33,7 +33,7 @@ class FadeTransition extends Transition {
 		}
 		
 		if (direction == TransitionDirection.OUT && context.phase == DisplayPhase.TRANSITION_OUT) {
-			Console.log("calculating " + target.alpha + " -- " + (((context.end + duration) - context.playhead) / duration));
+			//Console.log("calculating " + target.alpha + " -- " + (((context.end + duration) - context.playhead) / duration));
 			target.alpha = ((context.end + duration) - context.playhead) / duration;
 			return;
 		}
