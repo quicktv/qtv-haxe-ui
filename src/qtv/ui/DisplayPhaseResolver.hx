@@ -37,10 +37,12 @@ class DisplayPhaseResolver extends UIComponentPlugin
 			{				
 				case DisplayPhase.TRANSITION_IN:
 					target.active = true;
+					target.alpha = 0;
 				case DisplayPhase.TRANSITION_OUT:
 					target.active = true;
 				case DisplayPhase.SHOWING:
 					target.active = true;
+					target.alpha = 1;
 				
 				default:
 					target.active = false;
