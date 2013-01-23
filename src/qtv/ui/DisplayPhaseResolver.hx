@@ -62,6 +62,8 @@ class DisplayPhaseResolver extends UIComponentPlugin
 
 			_previousPhase = context.phase;
 		}
+
+		//Console.log("resolved display phase for " + target + "(" + target.includeInLayout + ") to " + context.phase);
 	}
 	
 	function currentDisplayPhase(target:UIComponent):DisplayPhase {
