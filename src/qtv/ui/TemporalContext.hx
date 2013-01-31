@@ -33,7 +33,7 @@ class TemporalContext
 		timer.timeChanged.add(onTick);
 	}
 
-	var _rendered:Boolean;
+	var _rendered:Bool;
 	
 	function onTick(value:Int):Void {
 		//Console.log("time = " + value);
