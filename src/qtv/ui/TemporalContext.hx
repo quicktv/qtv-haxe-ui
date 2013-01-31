@@ -32,12 +32,17 @@ class TemporalContext
 	@post public function post():Void {
 		timer.timeChanged.add(onTick);
 	}
+
+	var _rendered:Boolean;
 	
 	function onTick(value:Int):Void {
 		//Console.log("time = " + value);
-		if (playhead != value) {
-			playhead = value;
-			target.render();
+		if (!_rendered) {
+			if (playhead != value) {
+				playhead = value;
+				target.render();
+			}
+			_rendered = true;
 		}
 	}
 }
