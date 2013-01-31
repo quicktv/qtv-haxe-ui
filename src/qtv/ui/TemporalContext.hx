@@ -25,6 +25,7 @@ class TemporalContext
 		this.begin = begin;
 		this.end = end;
 		this.duration = duration;
+		this.playhead = 0;
 		
 		phase = DisplayPhase.NOT_SHOWING;
 
@@ -35,17 +36,17 @@ class TemporalContext
 		timer.timeChanged.add(onTick);
 	}
 
-	var _rendered:Bool;
+	//var _rendered:Bool;
 	
 	function onTick(value:Int):Void {
 		//Console.log("time = " + value);
-		if (!_rendered) {
-			Console.log("on tick -- '" + target + "' " + playhead + " => " + value + " " + (playhead != value));
+		//if (!_rendered) {
+		//	Console.log("on tick -- '" + target + "' " + playhead + " => " + value + " " + (playhead != value));
 			if (playhead != value) {
 				playhead = value;
 				target.render();
 			}
-			_rendered = true;
-		}
+		//	_rendered = true;
+		//}
 	}
 }
