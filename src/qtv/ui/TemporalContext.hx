@@ -27,6 +27,8 @@ class TemporalContext
 		this.duration = duration;
 		
 		phase = DisplayPhase.NOT_SHOWING;
+
+		_rendered = false;
 	}
 	
 	@post public function post():Void {
