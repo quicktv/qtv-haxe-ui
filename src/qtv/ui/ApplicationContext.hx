@@ -17,8 +17,6 @@ class ApplicationContext extends Context
 	
 	public override function startup():Void {
 		
-		Console.log("starting up");
-		
 		injector.mapSingleton(Timer);
 		injector.mapSingleton(ComponentBuilder);
 	}

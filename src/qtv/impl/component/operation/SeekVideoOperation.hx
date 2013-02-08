@@ -17,8 +17,6 @@ class SeekVideoOperation extends TargetAwareAction
 	}
 	
 	public override function execute():Void {
-		Console.log("seeking video " + getTargetComponent() + " to " + time);
-		
 		cast(getTargetComponent(), BasicVideo).seek(Std.int(time));
 	}
 	

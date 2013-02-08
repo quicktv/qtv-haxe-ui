@@ -19,10 +19,12 @@ class ComponentBuilder
 	
 	public function create<T>(clazz:Class<T>, ?vars:Array<Dynamic>):T {
 		if (vars == null) vars = [];
-		Console.log("creating instance of clazz " + clazz);
+		#if preview Console.log("creating instance of clazz " + clazz); #end
 
 		var instance:T = Type.createInstance(clazz, []);
+		#if preview Console.log("creating instance of clazz " + clazz); #end
 		injector.injectInto(instance);
+		#if preview Console.log("creating instance of clazz " + clazz); #end
 
 		return instance;
 	}

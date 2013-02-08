@@ -15,8 +15,6 @@ class PauseVideoOperation extends TargetAwareAction
 	}
 	
 	public override function execute():Void {
-		Console.log("pausing video " + getTargetComponent());
-		
 		cast(getTargetComponent(), BasicVideo).pause();
 	}
 	

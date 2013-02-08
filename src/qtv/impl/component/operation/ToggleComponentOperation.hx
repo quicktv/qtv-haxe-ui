@@ -9,8 +9,6 @@ class ToggleComponentOperation extends TargetAwareAction {
 	}
 	
 	public override function execute():Void {
-		Console.log("toggling component " + getTargetComponent());
-		
 		getTargetComponent().visible = !getTargetComponent().visible;
 	}
 

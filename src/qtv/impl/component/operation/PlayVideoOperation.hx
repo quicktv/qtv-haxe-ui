@@ -15,8 +15,6 @@ class PlayVideoOperation extends TargetAwareAction
 	}
 	
 	public override function execute():Void {
-		Console.log("playing video " + getTargetComponent());
-		
 		cast(getTargetComponent(), BasicVideo).play();
 	}
 	
