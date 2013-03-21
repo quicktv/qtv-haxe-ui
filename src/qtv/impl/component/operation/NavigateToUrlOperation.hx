@@ -6,6 +6,7 @@ import xuloo.ui.Action;
 import flash.net.URLRequest;
 import flash.Lib;
 #elseif js
+import js.Dom;
 import js.Lib;
 #end
 
