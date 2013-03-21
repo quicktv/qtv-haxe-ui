@@ -52,8 +52,8 @@ class NavigateToUrlOperation extends Action {
 			//Lib.window.open(_url, "", "_blank");
 			//Console.log("window parent " + Lib.window.parent);
 			var window:Window = Lib.window;
-			if (Lib.window.parent != null) {
-				window = Lib.window.parent;
+			while (window.parent != null) {
+				window = window.parent;
 			}
 			window.location.replace(_url);
 		} catch (e:String) {
