@@ -62,7 +62,6 @@ class NavigateToUrlOperation extends Action {
 		} catch (e:String) {
 			Console.log("error: " + e);
 		}
-		untyped __js__('openWindow(' + _url + ', "", ""');
 		#end
 	}
 
