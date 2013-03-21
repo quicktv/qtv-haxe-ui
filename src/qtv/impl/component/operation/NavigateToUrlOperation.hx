@@ -43,7 +43,22 @@ class NavigateToUrlOperation extends Action {
 		#if flash
 		Lib.getURL(new URLRequest(_url), "_blank");
 		#elseif js
-		Lib.window.location.replace(_url);
+		try {
+			//Console.log("trying location.replace");
+			//Lib.window.location.replace(_url);
+			//Lib.window.openWindow(_url, "nothing", "");
+			//Console.log("opening window '" + _url + "' in parent");
+			//Lib.window.open(_url, "", "_blank");
+			//Console.log("window parent " + Lib.window.parent);
+			var window:Window = Lib.window;
+			if (Lib.window.parent != null) {
+				window = Lib.window.parent;
+			}
+			window.location.replace(_url);
+		} catch (e:String) {
+			Console.log("error: " + e);
+		}
+		untyped __js__('openWindow(' + _url + ', "", ""');
 		#end
 	}
 
