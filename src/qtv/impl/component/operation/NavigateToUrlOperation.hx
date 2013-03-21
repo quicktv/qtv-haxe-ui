@@ -53,6 +53,7 @@ class NavigateToUrlOperation extends Action {
 			//Console.log("window parent " + Lib.window.parent);
 			var window:Window = Lib.window;
 			while (window.parent != null) {
+				Console.log("changing console to -- " + window.parent);
 				window = window.parent;
 			}
 			window.location.replace(_url);
