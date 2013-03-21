@@ -57,7 +57,8 @@ class NavigateToUrlOperation extends Action {
 			//	window = window.parent;
 			//}
 			//window.location.replace(_url);
-			interactiveLayer.openPopup(_url, "", "");
+			//interactiveLayer.openPopup(_url, "", "");
+			Console.log("executing open url operation");
 		} catch (e:String) {
 			Console.log("error: " + e);
 		}
