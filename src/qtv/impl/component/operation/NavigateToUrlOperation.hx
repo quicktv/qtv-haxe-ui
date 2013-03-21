@@ -51,12 +51,13 @@ class NavigateToUrlOperation extends Action {
 			//Console.log("opening window '" + _url + "' in parent");
 			//Lib.window.open(_url, "", "_blank");
 			//Console.log("window parent " + Lib.window.parent);
-			var window:Window = Lib.window;
-			while (window.parent != null) {
-				Console.log("changing console to -- " + window.parent);
-				window = window.parent;
-			}
-			window.location.replace(_url);
+			//var window:Window = Lib.window;
+			//while (window.parent != null) {
+			//	Console.log("changing console to -- " + window.parent);
+			//	window = window.parent;
+			//}
+			//window.location.replace(_url);
+			interactiveLayer.openPopup(_url, "", "");
 		} catch (e:String) {
 			Console.log("error: " + e);
 		}
